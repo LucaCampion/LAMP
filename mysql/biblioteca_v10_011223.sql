@@ -38,7 +38,7 @@ CREATE TABLE `autori` (
 
 LOCK TABLES `autori` WRITE;
 /*!40000 ALTER TABLE `autori` DISABLE KEYS */;
-INSERT INTO `autori` VALUES (1,'Jane Austen','Inglese','1775-12-16','1817-07-18'),(2,'George Orwell','Inglese','1903-06-25','1950-01-21'),(3,'Harper Lee','Americana','1926-04-28','2016-02-19');
+INSERT INTO `autori` VALUES (1,'Dante Alighieri','Italiana','1265-09-14','1321-09-14'),(2,'Francesco Petrarca','Italiana','1304-07-20','1374-07-19'),(3,'Gabriele d Annunzio','Italiana','1863-03-12','2016-02-19');
 /*!40000 ALTER TABLE `autori` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -53,7 +53,7 @@ CREATE TABLE `categorie` (
   `id_categoria` int NOT NULL AUTO_INCREMENT,
   `nome_categoria` varchar(50) NOT NULL,
   PRIMARY KEY (`id_categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +62,7 @@ CREATE TABLE `categorie` (
 
 LOCK TABLES `categorie` WRITE;
 /*!40000 ALTER TABLE `categorie` DISABLE KEYS */;
-INSERT INTO `categorie` VALUES (1,'Romanzo'),(2,'Saggio'),(3,'Fantascienza'),(4,'Mistero');
+INSERT INTO `categorie` VALUES (1,'Poema'),(2,'Romanzo'),(3,'Mistero'),(4,'Fantascienza'),(5,'Tragedia');
 /*!40000 ALTER TABLE `categorie` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -84,7 +84,7 @@ CREATE TABLE `libri` (
   KEY `id_categoria` (`id_categoria`),
   CONSTRAINT `libri_ibfk_1` FOREIGN KEY (`id_autore`) REFERENCES `autori` (`id_autore`),
   CONSTRAINT `libri_ibfk_2` FOREIGN KEY (`id_categoria`) REFERENCES `categorie` (`id_categoria`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -93,7 +93,7 @@ CREATE TABLE `libri` (
 
 LOCK TABLES `libri` WRITE;
 /*!40000 ALTER TABLE `libri` DISABLE KEYS */;
-INSERT INTO `libri` VALUES (1,'Orgoglio e pregiudizio',1,1,1813),(2,'1984',2,3,1949),(3,'Il buio oltre la siepe',3,1,1960),(4,'Guerra e pace',1,1,1869);
+INSERT INTO `libri` VALUES (1,'Divina Commedia',1,1,1472),(2,'il Canzoniere',2,1,1345),(3,'La figlia di Lorio',3,5,1904);
 /*!40000 ALTER TABLE `libri` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -106,4 +106,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-25 13:28:15
+-- Dump completed on 2023-12-01  8:55:02
